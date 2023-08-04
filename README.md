@@ -1,26 +1,31 @@
-# Security
+# Spring Security
 
-In the application world the term security is often implies 2 things, 
-- Authentication (who)
-- Authorization (what)
+Spring provides a comprehensive set of tools customizable to fulfill almost every need of applications.
+To provide you with an overview of what spring security provides, have a look at below list.
 
-## Authentication (AuthN)
-Authentication refers to the process of identifying/verifying the principle.
-A principle can be a human, machine etc.
+## What Spring security can do?
+- Application Security
+- Provide login and logout functionality
+- SSO / Okta / LDAP
+- App Level Authorization
+- Intra App authorization using OAuth.
+- Microservices Security (using tokens, JWT ...)
+- Method level security
+- Allow/block access URLs to logged-in users (and with certain roles)
+- Handle common vulnerabilities
+    - Session fixation
+    - Clickjacking
+    - Click site request forgery
 
-### Authentication Support from Spring
-- HTTP basic and digest, x509 certificate and form based authentication
-- LDAP and Active Directory
-- OpenID, JasigCAS (Central authentication service) and JAAS
-- Kerberos and SAML
+Before diving deep into the world of security it is most important to learn about the basic security concepts.
+Please go through the document: [Basic Security Concepts.md](Basic%20Security%20Concepts.md) to learn more about
+these concepts.
 
-## Authorization (AuthZ)
-After identifying the principle we can identify what they can do with the system, which is what we term as authorization.
-Note: 
-- Authorization is based on authentication. In order to identify what can be done, it is essential to identify the principle.
-- Authorization is also called as access control
+## Default Spring security behavior
+Right after adding the spring security dependency in the project. Spring does below things:
+- Adds mandatory authentication for URLs. (Not for errors)
+- Adds login form
+- Handles login error
+- Creates a user and sets a default password
 
-### Authorization Support from Spring
-- Web request based authorization
-- Method invocation security
-- Domain Object instance access control
+This repository contains a dummy project to showcase the working of spring security.
