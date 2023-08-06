@@ -35,4 +35,9 @@ public class ProductController {
                         String.format("Not product found for id %s", id)
         ));
     }
+
+    @GetMapping("test")
+    public String getById() {
+        return "world";
+    }
 }
