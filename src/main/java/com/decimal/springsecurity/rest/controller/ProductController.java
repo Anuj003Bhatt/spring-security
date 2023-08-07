@@ -1,9 +1,9 @@
 package com.decimal.springsecurity.rest.controller;
 
-import com.decimal.springsecurity.rest.model.Product;
-import com.decimal.springsecurity.rest.repository.ProductRepository;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import com.decimal.springsecurity.rest.model.request.AddProduct;
+import com.decimal.springsecurity.rest.model.response.ProductDto;
+import com.decimal.springsecurity.rest.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,23 +17,25 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("products")
-@AllArgsConstructor
 public class ProductController {
 
-    private final ProductRepository productRepository;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product addProduct(@RequestBody Product product) {
-        return productRepository.save(product);
+    public ProductDto addProduct(
+            @Valid @RequestBody AddProduct request
+    ) {
+        return productService.addProduct(request);
     }
 
     @GetMapping("{id}")
-    public Product getById(@PathVariable("id") UUID id) {
-        return productRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException(
-                        String.format("Not product found for id %s", id)
-        ));
+    public ProductDto getById(@PathVariable("id") UUID id) {
+        return productService.gitById(id);
     }
 
     @GetMapping("test")

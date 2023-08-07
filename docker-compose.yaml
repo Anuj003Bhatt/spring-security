@@ -1,14 +1,14 @@
 version: '2'
 
 services:
-#  localstack:
-#    container_name: localstack-server
-#    image: localstack/localstack
-#    ports:
-#      - "127.0.0.1:4566:4566"
-#      - "127.0.0.1:4510-4559:4510-4559"
-#    networks:
-#      - dev_network
+  localstack:
+    container_name: localstack-server
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    networks:
+      - dev_network
   postgres_database:
     container_name: main-postgres-server
     image: postgres:14.2
