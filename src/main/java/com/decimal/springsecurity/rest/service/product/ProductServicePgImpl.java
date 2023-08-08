@@ -1,4 +1,4 @@
-package com.decimal.springsecurity.rest.service;
+package com.decimal.springsecurity.rest.service.product;
 
 import com.decimal.springsecurity.rest.model.entity.Product;
 import com.decimal.springsecurity.rest.model.mapper.ProductMapper;
@@ -6,6 +6,7 @@ import com.decimal.springsecurity.rest.model.request.AddProduct;
 import com.decimal.springsecurity.rest.model.response.ProductDto;
 import com.decimal.springsecurity.rest.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.AllArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +14,11 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class ProductServicePgImpl implements ProductService {
 
     private static final ProductMapper PRODUCT_MAPPER = Mappers.getMapper(ProductMapper.class);
     private final ProductRepository productRepository;
-
-    @Autowired
-    public ProductServicePgImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
 
     @Override
     public ProductDto gitById(UUID id) {

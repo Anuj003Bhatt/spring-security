@@ -1,4 +1,4 @@
-package com.decimal.springsecurity.rest.service;
+package com.decimal.springsecurity.rest.service.product;
 
 import com.decimal.springsecurity.rest.model.entity.Product;
 import com.decimal.springsecurity.rest.model.request.AddProduct;

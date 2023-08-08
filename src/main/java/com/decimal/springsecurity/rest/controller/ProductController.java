@@ -2,8 +2,9 @@ package com.decimal.springsecurity.rest.controller;
 
 import com.decimal.springsecurity.rest.model.request.AddProduct;
 import com.decimal.springsecurity.rest.model.response.ProductDto;
-import com.decimal.springsecurity.rest.service.ProductService;
+import com.decimal.springsecurity.rest.service.product.ProductService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,13 +18,10 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("products")
+@AllArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
-
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
