@@ -17,7 +17,7 @@ To provide you with an overview of what spring security provides, have a look at
     - Click site request forgery
 
 Before diving deep into the world of security it is most important to learn about the basic security concepts.
-Please go through the document: [Basic Security Concepts.md](docs%2FBasic%20Security%20Concepts.md) to learn more about
+Please go through the document: [Basic Security Concepts.md](Basic%20Security%20Concepts.md) to learn more about
 these concepts.
 
 ## Default Spring security behavior
