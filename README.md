@@ -1,31 +1,38 @@
-# Spring Security
+# Overview
 
-Spring provides a comprehensive set of tools customizable to fulfill almost every need of applications.
-To provide you with an overview of what spring security provides, have a look at below list.
+Welcome to this repository, meticulously crafted for educational purposes. Within this repository, you will find a
+comprehensive demonstration project that revolves around the management of Products and Orders. It is essential to
+underscore that this project's functionality seamlessly integrates with
+the [service-rbac](https://github.com/Anuj003Bhatt/service-rbac) repository, which plays a pivotal role in user
+authentication by facilitating JWT generation and verification mechanisms.
 
-## What Spring security can do?
-- Application Security
-- Provide login and logout functionality
-- SSO / Okta / LDAP
-- App Level Authorization
-- Intra App authorization using OAuth.
-- Microservices Security (using tokens, JWT ...)
-- Method level security
-- Allow/block access URLs to logged-in users (and with certain roles)
-- Handle common vulnerabilities
-    - Session fixation
-    - Clickjacking
-    - Click site request forgery
+# Repository contents
 
-Before diving deep into the world of security it is most important to learn about the basic security concepts.
-Please go through the document: [Basic Security Concepts.md](docs%2FBasic%20Security%20Concepts.md) to learn more about
-these concepts.
+This repository encapsulates a range of sample implementations, each tailored to address specific aspects of software
+development and best practices. Some of the notable contents include:
 
-## Default Spring security behavior
-Right after adding the spring security dependency in the project. Spring does below things:
-- Adds mandatory authentication for URLs. (Not for errors)
-- Adds login form
-- Handles login error
-- Creates a user and sets a default password
+- **Spring REST**: The repository houses a collection of REST endpoints that adhere to the Spring framework.
+- **Spring Data JPA**: Here, you will find implementations that leverage Spring Data JPA for efficient database
+  interaction.
+- **Postgres**: The usage of the Postgres database system is a prominent feature of this repository's content.
+- **JPA Auditing**: Implementations in this repository employ JPA Auditing to ensure robust data tracking.
+- **Spring Security**: The repository boasts elements that delve into Spring Security, a pivotal component for
+  safeguarding applications.
+- **JSON Web Tokens (JWT)**: Implementations related to JSON Web Tokens (JWT) can also be found, showcasing secure
+  authentication mechanisms.
+- **Retrofit API and Microservice Client Implementations**: This repository includes instances of Retrofit API usage and
+  client implementations, fostering effective communication within microservices.
+- **MapStruct**: You will encounter examples that leverage MapStruct for streamlined object mapping.
 
-This repository contains a dummy project to showcase the working of spring security.
+# Learning Focus and Documentation
+
+The primary motivation behind creating this repository was to facilitate learning around Spring Security. Consequently,
+it offers comprehensive documentation that can be highly beneficial for individuals embarking on their journey with
+Spring Security. Valuable references to documentation are thoughtfully provided:
+
+- [Spring Security.md](docs%2FSpring%20Security.md)
+- [Basic Security Concepts.md](docs%2FBasic%20Security%20Concepts.md)
+- [ConfigureSpringSecurity.md](docs%2FConfigureSpringSecurity.md)
+
+Feel free to explore, learn, and enhance your understanding of these intricate yet vital concepts in the realm of
+software development.

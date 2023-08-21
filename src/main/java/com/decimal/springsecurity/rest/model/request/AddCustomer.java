@@ -1,5 +1,6 @@
 package com.decimal.springsecurity.rest.model.request;
 
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -12,6 +13,8 @@ public class AddCustomer {
     private String email;
 //    @Pattern(regexp = "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$")
     private String phone;
+    @NotEmpty(message = "Username cannot be empty")
+    private String username;
     private String password;
     private AddAddress address;
 }

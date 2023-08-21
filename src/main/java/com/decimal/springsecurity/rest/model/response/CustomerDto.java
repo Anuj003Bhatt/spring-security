@@ -12,6 +12,7 @@ import java.util.UUID;
 public class CustomerDto extends AuditDto {
     private UUID id;
     private String name;
+    private String username;
     private String email;
     private String phone;
     private AddressDto address;

@@ -21,7 +21,6 @@ import java.util.List;
 public interface CustomerMapper {
     AddressMapper ADDRESS_MAPPER = Mappers.getMapper(AddressMapper.class);
 
-    @Mapping(target = "password", expression = "java(EncryptionUtil.encryptWithSalt(addCustomer.getPassword()))")
     @Mapping(target = "addresses", expression = "java(List.of(addRequestAddressToEntity(addCustomer.getAddress())))")
     Customer addRequestToEntity(AddCustomer addCustomer);
 
